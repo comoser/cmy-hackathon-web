@@ -3,23 +3,40 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+}
+
+.App-logo-pos {
+  position: absolute;
+  bottom: 15%;
+  right: 20%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 3s linear;
+  }
+  .App-logo-move {
+    animation: App-logo-move infinite 5s linear;
+  }
+  .App-logo-move-2 {
+    animation: App-logo-move-2 infinite 10s linear;
+  }
+  .App-logo-move-3 {
+    animation: App-logo-move-3 infinite 2s linear;
   }
 }
 
 .App-header {
   background-color: #282c34;
+  background-image: url(./hackathon.jpg);
+  background-size: contain;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -34,5 +51,40 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+@keyframes App-logo-move {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(320%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes App-logo-move-2 {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(320%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes App-logo-move-3 {
+  0% {
+    transform: translate(0%, 0%)
+  }
+  50% {
+    transform: translate(320%, 100%);
+  }
+  100% {
+    transform: translate(0%, 0%);
   }
 }
