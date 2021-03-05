@@ -8,7 +8,7 @@ COPY ./ ./
 RUN yarn build
 
 # web server
-FROM nginx:stable-alpine
+FROM nginxinc/nginx-unprivileged
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 8080
